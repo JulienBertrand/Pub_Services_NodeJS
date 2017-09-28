@@ -1,7 +1,7 @@
-var pubservice = require('../index').services.pubService;
-var moment = require('moment');
-var assert = require('assert');
-var expect = require('chai').expect;
+const pubservice = require('../index').services.pubService;
+const moment = require('moment');
+const assert = require('assert');
+const expect = require('chai').expect;
 
 
 try {
