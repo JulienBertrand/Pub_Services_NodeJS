@@ -28,6 +28,8 @@ function PubListOuvert(day) {
 }
 
 module.exports = {
-    PubList: PubList,
-    PubListOuvert: PubListOuvert
+
+        PubList: PubList,
+        PubListOuvert: PubListOuvert
+
 };
