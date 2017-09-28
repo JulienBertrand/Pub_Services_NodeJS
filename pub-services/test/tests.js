@@ -1,6 +1,6 @@
 const pubservice = require('../index').services.pubService;
 const moment = require('moment');
-const assert = require('assert');
+
 const expect = require('chai').expect;
 
 
