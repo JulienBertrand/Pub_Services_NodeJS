@@ -1,22 +1,33 @@
-var pubs=require('../mocks/pub.json');
-var _= require('lodash');
+var pubs = require('../mocks/pub.json');
+var _ = require('lodash');
+var moment = require('moment');
 
 function PubList() {
-    return pubs;
-
-}
-//console.log(pubs);
-
-function PubListJours(){
-    var nbrPub = _.size(pubs);
-    console.log(nbrPub);
-    for (var i=0; i<nbrPub; i++){
-      var pubTab= pubs[i].name;
-      var pubTabOpen = pubs[i].openDays;
-console.log(pubTab);
-console.log(pubTabOpen);
+    if (pubs !== undefined) {
+        return pubs;
     }
-   // return pubsjours;
+    else {
+        throw new Error('La liste de pubs est vide');
+    }
+}
+function PubListOuvert(day) {
+   // var nbrPub = _.size(pubs);
+    var pubListOuvert = _.filter(pubs, function(pub){return _.includes(pub.openDays, day)});
+    if (pubListOuvert !== undefined) {
+        return pubListOuvert;
+    }
+    else {
+        throw new Error('La liste de pubs est vide');
+    }
+    // for (var i = 0; i < nbrPub; i++) {
+    //     if (pubs[i].openDays.includes(day)) {
+    //         pubListOuvert.push(pubs[i].name);
+    //     }
+    // }
+
 }
 
-PubListJours();
+module.exports = {
+    PubList: PubList,
+    PubListOuvert: PubListOuvert
+};
