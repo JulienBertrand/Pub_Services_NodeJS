@@ -28,14 +28,17 @@ function PubList() {
 }
 function PubListOuvert(day) {
    // var nbrPub = _.size(pubs);
-    return _.filter(PubList(), pub => _.includes(pub.openDays, day));
+    if(PubList) {
+        return _.filter(PubList(), pub => _.includes(pub.openDays, day));
+    }
 //ArrowFunction
-    if (pubListOuvert) {
-        return pubListOuvert;
-    }
     else {
-        throw new Error('La liste de pubs est vide');
-    }
+         throw new Error('La liste de pubs est vide');
+     }
+//     if (pubListOuvert) {
+//         return pubListOuvert;
+//     }
+//
     // for (var i = 0; i < nbrPub; i++) {
     //     if (pubs[i].openDays.includes(day)) {
     //         pubListOuvert.push(pubs[i].name);
