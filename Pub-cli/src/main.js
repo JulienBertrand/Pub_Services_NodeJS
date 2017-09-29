@@ -5,6 +5,7 @@ function getListPubs() {
     return pubService.services.pubService.PubList();
 }
 
+
 function getListPubsOuvert() {
     return pubService.services.pubService.PubListOuvert(moment().format('dddd'));
 }
